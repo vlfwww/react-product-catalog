@@ -1,0 +1,38 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  & .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 60px;
+    margin-bottom: 40px;
+  }
+  & .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 80px;
+    & .pageBtn {
+      padding: 8px 16px;
+      border: 1px solid #1a3b5d;
+      background: white;
+      color: #1a3b5d;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    & .activePage {
+      padding: 8px 16px;
+      border: 1px solid #1a3b5d;
+      background: #1a3b5d;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+.loader {
+  text-align: center;
+  padding: 100px;
+  color: #1a3b5d;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #2c3e50;
+  color: white;
+  & .logo{
+    margin: 0;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+  }
+  & .nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    position: relative;
+  }
+  & .badge {
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    position: absolute;
+    top: -10px;
+    right: -15px;
+  }
+}
