@@ -1,0 +1,83 @@
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.title {
+  color: #1a3b5d;
+  font-size: 24px;
+  border-bottom: 2px solid #1a3b5d;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.orderCard {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.orderHeader {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e8ed;
+  font-weight: 600;
+  font-size: 14px;
+  color: #5d6d7e;
+}
+
+.orderId {
+  color: #1a3b5d;
+}
+
+.orderItems {
+  padding: 20px;
+}
+
+.itemRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dotted #dee2e6;
+  font-size: 15px;
+}
+
+.itemRow:last-child {
+  border-bottom: none;
+}
+
+.orderFooter {
+  background: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  align-items: center;
+  border-top: 1px solid #f1f1f1;
+}
+
+.totalLabel {
+  font-weight: 600;
+  color: #7f8c8d;
+}
+
+.totalAmount {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a3b5d;
+}
+
+.emptyOrders {
+  text-align: center;
+  padding: 50px;
+  color: #7f8c8d;
+  background: #f8f9fa;
+  border: 1px dashed #ced4da;
+}

@@ -1,0 +1,31 @@
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import type { CartItem } from './cartSlice';
+
+interface Order {
+  id: string;
+  date: string;
+  items: CartItem[];
+  total: number;
+}
+
+interface OrderState {
+  orders: Order[];
+}
+
+const initialState: OrderState = {
+  orders: JSON.parse(localStorage.getItem('orders') || '[]'),
+};
+
+const orderSlice = createSlice({
+  name: 'orders',
+  initialState,
+  reducers: {
+    addOrder: (state, action: PayloadAction<Order>) => {
+      state.orders.unshift(action.payload); 
+      localStorage.setItem('orders', JSON.stringify(state.orders));
+    },
+  },
+});
+
+export const { addOrder } = orderSlice.actions;
+export default orderSlice.reducer;
