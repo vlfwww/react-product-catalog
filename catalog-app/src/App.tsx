@@ -4,6 +4,7 @@ import { Header } from './components/Header/Header';
 import { CatalogPage } from './pages/CatalogPage/CatalogPage';
 import { CartPage } from './pages/CartPage/CartPage';
 import { OrdersPage } from './pages/OrdersPage/OrdersPage';
+import { HomePage } from './pages/HomePage/HomePage';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Header />
       <main style={{ padding: '20px' }}>
         <Routes>
-          <Route path="/" element={<CatalogPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/orders" element={<OrdersPage />} />
         </Routes>

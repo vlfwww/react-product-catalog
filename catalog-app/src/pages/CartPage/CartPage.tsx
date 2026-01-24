@@ -23,7 +23,7 @@ export const CartPage: React.FC = () => {
 
   const handleCheckout = () => {
     const orderData = {
-      id: Math.random().toString(36).substr(2, 9).toUpperCase(),
+      id: Math.random().toString(36).substring(2, 11).toUpperCase(),
       date: new Date().toLocaleString(),
       items: [...items],
       total: totalPrice,
@@ -42,9 +42,20 @@ export const CartPage: React.FC = () => {
 
   if (items.length === 0) {
     return (
-      <div className={styles.emptyContainer}>
-        <h2>Корзина пуста</h2>
-        <Link to="/" className={styles.backButton}>Вернуться в каталог</Link>
+      <div className={styles.emptyWrapper}>
+        <div className={styles.emptyContent}>
+          <div className={styles.emptyIllustration}>
+            <span className={styles.emptyIcon}>🛒</span>
+          </div>
+          <h2 className={styles.emptyTitle}>Ваша корзина пуста</h2>
+          <p className={styles.emptyText}>
+            Похоже, вы еще ничего не добавили в корзину. 
+            Начните с каталога, чтобы найти интересные товары.
+          </p>
+          <Link to="/catalog" className={styles.returnButton}>
+            Перейти в каталог
+          </Link>
+        </div>
       </div>
     );
   }
@@ -62,12 +73,28 @@ export const CartPage: React.FC = () => {
                 <p className={styles.itemPrice}>${item.price.toFixed(2)}</p>
               </div>
               <div className={styles.quantityControls}>
-                <button onClick={() => dispatch(updateQuantity({ id: item.id, delta: -1 }))} disabled={item.quantity <= 1}>−</button>
+                <button 
+                  onClick={() => dispatch(updateQuantity({ id: item.id, delta: -1 }))} 
+                  disabled={item.quantity <= 1}
+                >
+                  −
+                </button>
                 <span>{item.quantity}</span>
-                <button onClick={() => dispatch(updateQuantity({ id: item.id, delta: 1 }))}>+</button>
+                <button 
+                  onClick={() => dispatch(updateQuantity({ id: item.id, delta: 1 }))}
+                >
+                  +
+                </button>
               </div>
-              <div className={styles.itemTotal}>${(item.price * item.quantity).toFixed(2)}</div>
-              <button className={styles.removeButton} onClick={() => handleRemove(item.id, item.title)}>✕</button>
+              <div className={styles.itemTotal}>
+                ${(item.price * item.quantity).toFixed(2)}
+              </div>
+              <button 
+                className={styles.removeButton} 
+                onClick={() => handleRemove(item.id, item.title)}
+              >
+                ✕
+              </button>
             </div>
           ))}
         </div>
@@ -76,7 +103,12 @@ export const CartPage: React.FC = () => {
             <span>Итого:</span>
             <span>${totalPrice.toFixed(2)}</span>
           </div>
-          <button className={styles.checkoutButton} onClick={handleCheckout}>Оформить заказ</button>
+          <button 
+            className={styles.checkoutButton} 
+            onClick={handleCheckout}
+          >
+            Оформить заказ
+          </button>
         </aside>
       </div>
     </div>

@@ -1,0 +1,116 @@
+.wrapper {
+  overflow-x: hidden;
+  background-color: #f4f7f9;
+
+  & .hero {
+    height: 85vh;
+    background: linear-gradient(rgba(26, 59, 93, 0.85), rgba(22, 39, 55, 0.85)),
+      url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070") no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+
+    @media (max-width: 600px) {
+      height: auto;
+      padding: 100px 20px;
+    }
+
+    & .heroContent {
+      max-width: 900px;
+
+      & .title {
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
+        margin-bottom: 20px;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+
+      & .subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 45px;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      & .ctaButton {
+        padding: 20px 50px;
+        background-color: #1a3b5d;
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover {
+          background-color: #ffffff;
+          color: #1a3b5d;
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
+  & .features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: -80px auto 80px;
+    padding: 0 20px;
+
+    @media (max-width: 1100px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      margin-top: 20px;
+    }
+
+    & .featureCard {
+      background: white;
+      padding: 50px 30px;
+      border-radius: 2px;
+      box-shadow: 0 15px 35px rgba(26, 59, 93, 0.1);
+      text-align: left;
+      border-top: 5px solid #2e68a3;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+
+      & .number {
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #e1e8ed;
+        margin-bottom: 20px;
+        font-family: "Inter", sans-serif;
+      }
+
+      & h3 {
+        color: #1a3b5d;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      & p {
+        color: #5d6d7e;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
-import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { productApi } from '../api/products'; 
 import type { Product } from '../types/product';
 
 interface ProductState {
@@ -16,13 +17,11 @@ const initialState: ProductState = {
 };
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-  const response = await fetch('https://fakestoreapi.com/products');
-  return (await response.json()) as Product[];
+  return await productApi.getAll();
 });
 
 export const fetchCategories = createAsyncThunk('products/fetchCategories', async () => {
-  const response = await fetch('https://fakestoreapi.com/products/categories');
-  return (await response.json()) as string[];
+  return await productApi.getCategories();
 });
 
 const productSlice = createSlice({
@@ -31,7 +30,9 @@ const productSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchProducts.pending, (state) => { state.loading = true; })
+      .addCase(fetchProducts.pending, (state) => {
+        state.loading = true;
+      })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.loading = false;
         state.items = action.payload;

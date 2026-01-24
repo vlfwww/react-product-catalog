@@ -8,13 +8,14 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Link to="/" className={styles.logo}><h1>My Store</h1></Link>
+      <Link to="/" className={styles.logo}><h1>Marketplace</h1></Link>
       <nav className={styles.nav}>
-        <Link to="/">Каталог</Link>
+        <Link to="/catalog">Каталог</Link>
         <Link to="/cart">
           Корзина 
           {totalCount > 0 && <span className={styles.badge}>{totalCount}</span>}
         </Link>
+        <Link to="/orders">Заказы</Link>
       </nav>
     </header>
   );
