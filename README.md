@@ -22,9 +22,12 @@ API: REST API (FakeStoreAPI).
 1. Клонирование репозитория
 _git clone https://github.com/your-username/your-repo-name.git_
 _cd your-repo-name_
-2. Установка зависимостей
+2. Настройка окружения
+Создайте файл `.env` в корне проекта и добавьте следующую строку:
+**VITE_API_URL=https://fakestoreapi.com**
+3. Установка зависимостей
 _npm install_
-3. Запуск в режиме разработки
+4. Запуск в режиме разработки
 _npm run dev_
 **Приложение будет доступно по адресу:** http://localhost:5173
 5. Запуск тестов
